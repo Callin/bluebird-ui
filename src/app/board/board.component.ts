@@ -9,12 +9,12 @@ import {UserModel} from '../domain/user-model';
 })
 export class BoardComponent implements OnInit {
 
-  users: UserModel[];
+  users: UserModel[] = [];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe((response: UserModel[]) => this.users = response);
+    this.userService.getAllUsers().subscribe((response: UserModel[]) => this.users = response);
   }
 
 }
